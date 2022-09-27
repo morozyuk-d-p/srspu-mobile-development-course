@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">SRSPU Mobile Development Course</string>
-    <string name="message">Hello World!\nПривет, мир!\nこんにちは</string>
+    <string name="message">Hello World!\nПривет, мир!\nこんにちは世界</string>
 </resources>

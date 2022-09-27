@@ -2,6 +2,7 @@ package ru.morozdan2003.srspu_mdc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.editText);
         Button button = (Button) findViewById(R.id.button);
         ImageButton redButton = (ImageButton) findViewById(R.id.redButton);
+        Button NextScreenButton = (Button) findViewById(R.id.next_screen_button);
 
         // Setup event listeners for buttons
         button.setOnClickListener(new View.OnClickListener() {
@@ -43,5 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("Кнопка нажата " + redButtonCounter[0].toString() + " раз");
             }
         });
+        NextScreenButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                goToNext(view);
+            }
+        });
+    }
+
+    public void goToNext(View view) {
+        Intent intent = new Intent(this, new_screen.class);
+        startActivity(intent);
     }
 }
