@@ -3,57 +3,28 @@ package ru.morozdan2003.srspu_mdc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Default code to initialize the activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Import message string in variable
-        String message = getResources().getString(R.string.message);
+        // handle buttons
+        Button text_button = (Button) findViewById(R.id.text_button);
+        Button clicker_button = (Button) findViewById(R.id.clicker_button);
 
-        // Integer for counter for red button
-        final Integer[] redButtonCounter = {0};
-
-        // Define programmatic objects for activity views
-        TextView textView = (TextView) findViewById(R.id.textView);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        Button button = (Button) findViewById(R.id.button);
-        ImageButton redButton = (ImageButton) findViewById(R.id.redButton);
-        Button NextScreenButton = (Button) findViewById(R.id.next_screen_button);
-
-        // Setup event listeners for buttons
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                String text = editText.getText().toString();
-                textView.setText(text);
-            }
+        // define listeners for buttons
+        text_button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, TextExample.class);
+            startActivity(intent);
         });
-        redButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                redButtonCounter[0]++;
-                textView.setText("Кнопка нажата " + redButtonCounter[0].toString() + " раз");
-            }
+        clicker_button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Clicker.class);
+            startActivity(intent);
         });
-        NextScreenButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                goToNext(view);
-            }
-        });
-    }
-
-    public void goToNext(View view) {
-        Intent intent = new Intent(this, new_screen.class);
-        startActivity(intent);
     }
 }
