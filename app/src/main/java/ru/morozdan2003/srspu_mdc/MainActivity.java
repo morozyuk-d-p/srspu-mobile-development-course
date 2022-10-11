@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         // handle buttons
         Button text_button = (Button) findViewById(R.id.text_button);
         Button clicker_button = (Button) findViewById(R.id.clicker_button);
+        Button activity_button = (Button) findViewById(R.id.activity_button);
 
         // define listeners for buttons
         text_button.setOnClickListener(view -> {
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
         });
         clicker_button.setOnClickListener(view -> {
             Intent intent = new Intent(this, Clicker.class);
+            startActivity(intent);
+        });
+        activity_button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, DataExchangeTest.class);
             startActivity(intent);
         });
     }
