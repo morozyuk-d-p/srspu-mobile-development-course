@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Button text_button = (Button) findViewById(R.id.text_button);
         Button clicker_button = (Button) findViewById(R.id.clicker_button);
         Button activity_button = (Button) findViewById(R.id.activity_button);
+        Button callback_button = (Button) findViewById(R.id.callback_button);
 
         // define listeners for buttons
         text_button.setOnClickListener(view -> {
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         });
         activity_button.setOnClickListener(view -> {
             Intent intent = new Intent(this, DataExchangeTest.class);
+            startActivity(intent);
+        });
+        callback_button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, CallbackTest0.class);
             startActivity(intent);
         });
     }

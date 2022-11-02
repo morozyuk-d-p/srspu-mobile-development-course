@@ -13,13 +13,29 @@
         android:theme="@style/Theme.SRSPUMobileDevelopmentCourse"
         tools:targetApi="31">
         <activity
+            android:name=".CallbackTest1"
+            android:exported="false"
+            android:parentActivityName=".CallbackTest0">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".CallbackTest0"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DataExchangeTestResponder"
-            android:parentActivityName=".DataExchangeTest"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DataExchangeTest" />
         <activity
             android:name=".DataExchangeTest"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -31,13 +47,12 @@
         </activity>
         <activity
             android:name=".Clicker"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TextExample"
-            android:parentActivityName=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
