@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Button clicker_button = (Button) findViewById(R.id.clicker_button);
         Button activity_button = (Button) findViewById(R.id.activity_button);
         Button callback_button = (Button) findViewById(R.id.callback_button);
+        Button media_button = (Button) findViewById(R.id.media_button);
+        Button video_button = (Button) findViewById(R.id.video_playback_menu_entry);
 
         // define listeners for buttons
         text_button.setOnClickListener(view -> {
@@ -34,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         });
         callback_button.setOnClickListener(view -> {
             Intent intent = new Intent(this, CallbackTest0.class);
+            startActivity(intent);
+        });
+        media_button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, MediaPlayback.class);
+            startActivity(intent);
+        });
+        video_button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, VideoPlayback.class);
             startActivity(intent);
         });
     }

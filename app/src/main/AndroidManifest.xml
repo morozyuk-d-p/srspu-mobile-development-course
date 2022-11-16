@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="ru.morozdan2003.srspu_mdc">
+    package="ru.morozdan2003.srspu_mdc" >
 
     <application
         android:allowBackup="true"
@@ -11,11 +11,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.SRSPUMobileDevelopmentCourse"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".VideoPlayback"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MediaPlayback"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".CallbackTest1"
             android:exported="false"
-            android:parentActivityName=".CallbackTest0">
+            android:parentActivityName=".CallbackTest0" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -23,7 +38,7 @@
         <activity
             android:name=".CallbackTest0"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -38,7 +53,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
